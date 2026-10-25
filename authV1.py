@@ -7,10 +7,18 @@ import os
 
 
 def line_log(text):
-   auth_found = 0
-   for char in text:
-    if char == "Successful Login":
-       auth_found += 1
+   Truauth_found = 0
+   Fauth_found = 0
+   if "Successful Login" in text:
+    Truauth_found += 1
+   elif "Failed Login" in text:
+     Fauth_found +=1 
+     
+   return Truauth_found
+
+
+print(line_log("Successful Login, Failed Login,Failed Login, Failed Login"))
+
 
 def brute_log(log_file):
    failed_attempt = 0
